@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "title": "Israeli Cybersecurity Startup Raises $100M Series B",
+      "link": "https://techcrunch.com/2025/01/15/israeli-cyber-startup-funding/",
+      "summary": "Israeli cybersecurity firm secures major funding from Silicon Valley VCs.",
+      "source": "techcrunch.com"
+    },
+    {
+      "title": "Israeli AI Company Expands Bay Area Operations",
+      "link": "https://www.geektime.co.il/israeli-ai-sf-expansion/",
+      "summary": "Leading Israeli generative AI startup opens new office in San Francisco.",
+      "source": "geektime.co.il"
+    },
+    {
+      "title": "50+ Israeli Tech Founders Gather at SF Summit",
+      "link": "https://nocamels.com/israeli-founders-sf/",
+      "summary": "Israeli founders gathered for tech summit in San Francisco.",
+      "source": "nocamels.com"
+    },
+    {
+      "title": "Israeli Cyber Defense Unicorn Hits $1B Valuation",
+      "link": "https://www.timesofisrael.com/tech-israel/cyber-unicorn/",
+      "summary": "Israeli cybersecurity firm reaches unicorn status.",
+      "source": "timesofisrael.com"
+    },
+    {
+      "title": "New Israeli Deep Tech Fund Launches in Palo Alto",
+      "link": "https://www.calcalistech.com/deep-tech-fund/",
+      "summary": "Israeli venture capital fund opens California office.",
+      "source": "calcalistech.com"
+    }
+  ]
+}
