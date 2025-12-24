@@ -1,5 +1,4 @@
-name: Daily Israel Tech News
-
+{ name": "israeli-tech-news-agent,
 on:
   schedule:
     # Run every day at 9 AM UTC (adjust timezone as needed)
