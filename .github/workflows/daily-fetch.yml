@@ -1,46 +1,5 @@
-name: Daily Israel Tech News
-on:
-  schedule:
-    - cron: '0 9 * * *'
-  workflow_dispatch:
-jobs:
-  fetch-and-publish:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Debug secrets
-        run: |
-          echo "NOTION_TOKEN length: ${#NOTION_TOKEN}"
-          echo "NOTION_DATABASE_ID length: ${#NOTION_DATABASE_ID}"
-          echo "ANTHROPIC_API_KEY length: ${#ANTHROPIC_API_KEY}"
+- name: Fetch and publish articles
         env:
-          NOTION_TOKEN: ntn_R1942327139aMW479dvo1QvTeYeaEB4r4werDp2J7WVdnt
-          NOTION_DATABASE_ID: 2d2fae4b5185802c9846e025b8138cb7
-          ANTHROPIC_API_KEY: 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
-      
-      - name: Fetch and publish articles
-        env:
-          NOTION_TOKEN: ntn_R1942327139aMW479dvo1QvTeYeaEB4r4werDp2J7WVdnt
-          NOTION_DATABASE_ID: 2d2fae4b5185802c9846e025b8138cb7
-          ANTHROPIC_API_KEY: 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
-        run: node fetch-and-push.js
-      
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "📰 Daily update: $(date +'%Y-%m-%d')" && git push)
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
