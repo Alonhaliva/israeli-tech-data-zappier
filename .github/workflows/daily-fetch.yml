@@ -1,11 +1,9 @@
 name: Daily Israel Tech News
-
 on:
   schedule:
     # Run every day at 9 AM UTC (adjust timezone as needed)
     - cron: '0 9 * * *'
   workflow_dispatch: # Allows manual trigger
-
 jobs:
   fetch-and-publish:
     runs-on: ubuntu-latest
@@ -26,6 +24,12 @@ jobs:
         
       - name: Install dependencies
         run: npm install
+      
+      - name: Debug environment variables
+        run: |
+          echo "NOTION_TOKEN exists: ${{ secrets.NOTION_TOKEN != '' }}"
+          echo "NOTION_DATABASE_ID exists: ${{ secrets.NOTION_DATABASE_ID != '' }}"
+          echo "ANTHROPIC_API_KEY exists: ${{ secrets.ANTHROPIC_API_KEY != '' }}"
       
       - name: Fetch and publish articles
         env:
